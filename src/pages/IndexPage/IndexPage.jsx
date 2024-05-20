@@ -1,5 +1,3 @@
-import thumbTest from '../../../test/thumb_test.jpeg'
-
 import Card from "../../components/Card/Card.jsx";
 
 export default function IndexPage() {
@@ -17,7 +15,7 @@ export default function IndexPage() {
                     'author': 'Baixue',
                     'tags': ['love', 'friendship']
             }}
-                thumb_img={thumbTest}
+                thumb_img={''}
                 intro='hello, world!'
             />
         </div>
