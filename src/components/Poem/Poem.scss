@@ -1,0 +1,77 @@
+@import "../../styles/root";
+
+main {
+  //border: 1px solid purple;
+  position: relative;
+  flex-grow: 1;
+  height: 90%;
+  padding-top: 1em;
+  backdrop-filter: blur(1px);
+
+  article.poem {
+
+    background-color: $bg-white;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em 5em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 100%;
+    white-space: pre-line;
+
+    font-size: 1.1rem;
+    font-family: $font-zh-songkeben;
+    line-height: 1.7;
+
+    .read-more {
+      display: block;
+      padding-bottom: .4em;
+      margin-top: .8em;
+      font-size: .8em;
+      border-bottom: 2px solid $young-yellow;
+      color: $soft-black;
+      text-align: right;
+    }
+
+    .title {
+      font-size: 1.5em;
+      margin-top: 1em;
+    }
+
+    .read-more > p:hover, .title:hover {
+      cursor: pointer;
+    }
+  }
+
+  @media (min-width: $m-screen) {
+    & {
+      max-width: 900px;
+      min-width: 80%;
+      margin: 0 auto;
+
+    }
+
+    article.poem {
+      column-count: 2;
+      padding: 2em 3em;
+      line-height: 2;
+
+
+
+      .title {
+        font-size: 1.2em;
+      }
+
+      .read-more {
+        margin-top: 2em;
+      }
+    }
+  }
+
+  @media screen and (min-width: 880px) {
+      article.poem > .title {
+        font-size: 1.5em;
+      }
+  }
+}
+

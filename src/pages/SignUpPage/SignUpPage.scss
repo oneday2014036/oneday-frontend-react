@@ -1,0 +1,7 @@
+div.signup {
+  @include login-form($form-height: 85%);
+
+  button {
+    margin: 1.5em 0;
+  }
+}

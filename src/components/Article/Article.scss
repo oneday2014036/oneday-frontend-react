@@ -1,0 +1,80 @@
+article.article {
+  margin: 0 1.2em 0 260px;
+
+  @media screen and (min-width: $m-screen) {
+    h1 {
+      font-size: 1.5em;
+    }
+
+    .info {
+      font-size: 1em;
+      max-width: 500px;
+    }
+  }
+
+
+  //border: 1px solid green;
+  margin: 0 1.2em;
+  padding: 1.5em 1.4em;
+  font-size: 16px;
+  //margin:.5em auto;
+  //padding: .5em;
+  width: 97%;
+  background-color: $bg-white;
+
+
+  h1 {
+    font-size: 1.5em;
+    //text-align: center;
+  }
+
+  .info {
+    //border: 1px solid mintcream;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: .3em 0;
+    margin: 1em 0;
+
+    .author {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      //flex: 0 1 30%;
+
+      p {
+        display: block;
+        margin-left: .5em;
+      }
+    }
+
+    .post-date {
+      //flex: 1 1 33%;
+
+    }
+
+    .source {
+      //flex: 1 1 33%;
+
+      span[data-type='wechat'] {
+        color: green;
+      }
+    }
+  }
+
+  .main-content {
+    line-height: 1.5;
+
+    p {
+      font-size: .9em;
+      text-indent: 1em;
+      line-height: 1.8;
+    }
+
+    p + p {
+      margin: 1.1em 0;
+    }
+  }
+}

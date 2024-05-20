@@ -1,0 +1,10 @@
+div.detail-page {
+  margin-top: .2em;
+  display: flex;
+  flex-direction: row;
+  max-width: 1500px;
+
+  @media screen and (min-width: $m-screen) {
+    margin-top: 1.7em;
+  }
+}

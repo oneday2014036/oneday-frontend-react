@@ -1,0 +1,52 @@
+@import "../../styles/root";
+
+nav {
+  display: flex;
+  flex-direction: row;
+
+  ul {
+    display: none;
+  }
+
+  img {
+    width: 2em;
+  }
+
+  @media screen and (min-width: $m-screen) {
+    & {
+      margin-left: auto;
+      width: 50%;
+      max-width: 600px;
+    }
+
+    ul {
+      //border: 1px solid black;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: .7em;
+    }
+  }
+}
+
+
+@media (min-width: $m-screen + 120px) {
+  nav.vertical {
+    & {
+      order: 4;
+      margin-top: .5em;
+      margin-left: 3em;
+      align-self: flex-start;
+      flex: 0.6;
+
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+}

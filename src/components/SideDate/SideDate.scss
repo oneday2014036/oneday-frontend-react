@@ -1,0 +1,45 @@
+@import "../../styles/root";
+
+div.side-date {
+  position: absolute;
+  top: .1em;
+  left: .3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 99;
+  font-family: Gelasio;
+
+  span {
+    display: block;
+    font-size: 2em;
+    letter-spacing: .2em;
+    color: $deep-yellow;
+  }
+
+  span.year {
+    font-size: 2.4em;
+    line-height: 1;
+    letter-spacing: .4em;
+  }
+}
+
+div.article-card {
+  .side-date {
+    position: absolute;
+    font-size: 1em;
+    top: -1.6em;
+    left: -.3em;
+
+    @media  screen and (min-width: $m-screen) {
+      font-size: 1.3em;
+      left: -1em;
+
+    }
+  }
+
+  .side-date .month-day {
+    font-size:  1.3em;
+    line-height: 1.5;
+  }
+}

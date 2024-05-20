@@ -1,0 +1,144 @@
+//@import "../../styles/root";
+
+
+header {
+  //border: 1px solid black;
+
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  & > .avatar {
+    display: none !important;
+  }
+
+  a.logo {
+    display: block;
+    width: 25%;
+    margin: 0 auto;
+    transform: translateX(-4em);
+
+  }
+
+  a.logo img {
+    //border: 1px solid green;
+    min-width: 200px;
+    width: 17%;
+  }
+
+  img.hand-down-nav {
+    width: 2em;
+    margin-left: 1em;
+  }
+
+  .function-area {
+    display: none;
+
+
+  }
+
+
+  .welcome {
+    display: none;
+  }
+
+  @media screen and (min-width: $m-screen){
+    img.hand-down-nav {
+      display: none;
+    }
+
+
+
+    .function-area {
+      //border: 1px solid greenyellow;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1em;
+      margin-left: 2em;
+      margin-right: 1em;
+
+
+    }
+
+    a.logo {
+      transform: translateX(1em);
+      margin: 0 2em 0 1em;
+    }
+  }
+
+}
+
+@media (min-width: $m-screen + 120px) {
+  div.vertical {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(12, 1fr);
+    backdrop-filter: blur(10px);
+    transition: backdrop-filter 2s ease-in-out;
+
+
+
+    header {
+      grid-column: 1 / 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      //max-width: 300px;
+      gap: 1em;
+
+      & > .avatar {
+        display: block !important;
+        order: 0;
+        margin-top: 4em;
+      }
+
+
+
+      .welcome {
+        display: block;
+        order: 1;
+        margin-top: 1.5em;
+        font-size: 1.3em;
+      }
+
+      .logo {
+        order: 2;
+        margin-top: 1.5em;
+        margin-left: .2em;
+        align-self: flex-start;
+        width:95%;
+        max-width: 350px;
+
+
+        img {
+          width: 100%;
+        }
+
+      }
+
+      .function-area {
+        order: 3;
+        align-self: flex-start;
+        margin-left: 3em;
+
+        .avatar {
+          display: none;
+        }
+      }
+
+    }
+
+    div.article-list {
+      //border: 1px solid black;
+      grid-column: 4 / 13;
+      margin-left: 0;
+    }
+
+  }
+}
+
+

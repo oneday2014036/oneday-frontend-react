@@ -1,0 +1,63 @@
+aside.side-catalog {
+  display: none;
+  @media screen and (min-width: $m-screen) {
+
+    & {
+      background-color: $bg-white;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      //border: 1px solid black;
+      margin-left: 2.2em;
+      width: 200px;
+      height: 66vh;
+
+      .menu {
+        padding: 1em;
+
+        .container {
+          //border: 1px solid blue;
+
+          h1 {
+            width: 80%;
+            text-align: center;
+            //border: 1px solid pink;
+            margin: 0 auto;
+
+            font-size: 1.3em;
+            padding-bottom: .5em;
+            border-bottom: 1px solid black;
+            //margin-bottom: .4em;
+
+            span {
+              display: inline-block;
+              min-width: 20px;
+            }
+          }
+
+        }
+
+        h2 {
+          font-size: 1.2em;
+          margin: .5em 0 .3em;
+        }
+
+        h3 {
+          font-size: .9em;
+          margin: .2em 0 0 .8em;
+        }
+
+      }
+
+      .social-icons {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: auto;
+        bottom: -5em;
+      }
+    }
+  }
+}
