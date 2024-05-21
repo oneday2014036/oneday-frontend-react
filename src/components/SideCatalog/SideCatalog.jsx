@@ -17,8 +17,8 @@ export default function SideCatalog({catalog}) {
                 {catalog.map((item) => {
                     return (
                     <>
-                        <h2>{Object.keys(item)[0]}</h2>
-                        {Object.values(item)[0].map(v => <h3 key={v}>{v}</h3>)}
+                        <h2><a href={`#${Object.keys(item)[0]}`}>{Object.keys(item)[0]}</a></h2>
+                        {Object.values(item)[0].map(v => <h3 key={v}><a href={`#${v}`}>{v}</a></h3>)}
                     </>)
                 })}
             </div>

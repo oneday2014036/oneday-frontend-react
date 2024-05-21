@@ -9,7 +9,7 @@ export default function HomePage() {
     const [poem, setPoem] = useState(null);
 
     useEffect(() => {
-        axios.get('/api/poem')
+        axios.get('/api/poems')
             .then(res => {
                 setPoem(res.data)
             })

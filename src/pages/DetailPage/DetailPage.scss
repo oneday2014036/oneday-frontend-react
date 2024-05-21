@@ -3,8 +3,13 @@ div.detail-page {
   display: flex;
   flex-direction: row;
   max-width: 1500px;
+  margin-right: 0;
+
 
   @media screen and (min-width: $m-screen) {
     margin-top: 1.7em;
+    div.article {
+      margin-left: 16em;
+    }
   }
 }

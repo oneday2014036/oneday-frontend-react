@@ -1,11 +1,12 @@
 #root {
   /*border: 1px solid green;*/
   max-width: 1480px;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  overflow-x:hidden;
 
 }
 

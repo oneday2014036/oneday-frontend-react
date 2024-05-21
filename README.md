@@ -50,9 +50,9 @@ server {
 然后启用虚拟主机，重启nginx使配置生效
 ```shell
 sudo cp bulid/nginx.conf /etc/nginx/site-available/oneday
-sudo ln -s /etc/nginx/site-available/oneday /etc/nginx/site-enable/
+sudo ln -s /etc/nginx/sites-available/oneday /etc/nginx/sites-enable/
 sudo mkdir -p /var/www/oneday/html
-sudo cp bulid/* /var/www/oneday/html/*
+sudo cp -R * /var/www/oneday/html/*
 sudo nginx -s reload
 ```
 
