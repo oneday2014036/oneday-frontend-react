@@ -4,10 +4,11 @@ import { NavLink } from 'react-router-dom'
 import navContext from '../../context/navContext.jsx'
 import './Navbar.scss'
 
-export default function Navbar(props) {
+export default function Navbar({isVertical}) {
+    isVertical = isVertical ? isVertical: false
     const navItems = useContext(navContext)
     return (
-        <nav {...props}>
+        <nav className={isVertical ? 'vertical' : ''}>
             <ul>
                 {Object.entries(navItems).map(item => {
                     const [name, path] = item;
@@ -17,9 +18,3 @@ export default function Navbar(props) {
         </nav>
     )
 }
-
-{/*<li><NavLink to='/front-end'>前端笔记</NavLink></li>*/}
-{/*<li><NavLink to='/reading'>读书笔记</NavLink></li>*/}
-{/*<li><NavLink to='/translation'>翻译文章</NavLink></li>*/}
-{/*<li><NavLink to='/onespace'>One导航</NavLink></li>*/}
-{/*<li><NavLink to='/onetools'>工具箱</NavLink></li>*/}

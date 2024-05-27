@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 
 import useFetch from "../../utils/useFetch.jsx";
 import Card from "../../components/Card/Card.jsx";
+import './IndexPage.scss'
 
 export default function IndexPage() {
     const location = useLocation();

@@ -1,10 +1,12 @@
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+import {Link, useLocation, useNavigate} from 'react-router-dom'
 
 import Logo from "../../components/Logo/Logo.jsx";
 
 import './SignUpPage.scss'
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
+import {useSelector, useDispatch} from "react-redux";
+import {setAuthStatus, setUserInfo} from "../../store/pageSlice.js";
 
 export default function LoginPage() {
     const [formData, setFormData] = useState({
@@ -17,6 +19,16 @@ export default function LoginPage() {
         'successMessage': '',
     })
     const ref = useRef()
+    const pageState = useSelector(state => state.page)
+    const dispatch = useDispatch();
+    const from = useLocation().state?.from || '/dashboard'
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (pageState.isAuthenticated) {
+            navigate(from, {replace: true})
+        }
+    }, [pageState.isAuthenticated])
 
     function handleformchange(e) {
         setFormData(pre => {
@@ -64,22 +76,23 @@ export default function LoginPage() {
             console.log(formData)
             axios({
                 method: 'post',
-                url: '/api/user',
+                url: '/api/users',
                 data: formData,
                 headers: {'Content-Type': 'application/json;'}
             })
                 .then(res => {
-                    console.log(res.data)
                     setFormData(pre=> {
                         return {
                             ...pre,
                             'successMessage': 'Sign up successfully!',
                         }
                     })
+                dispatch(setAuthStatus(true))
+                dispatch(setUserInfo(res.data))
                 })
                 .catch(err => {
                 console.log(err.response)
-                setErrorMessage(err.message)
+                setErrorMessage(err.response.data)
             })
         }
     }
@@ -137,7 +150,7 @@ export default function LoginPage() {
                 <button type='submit' onClick={handleSubmit}>注册</button>
                 <Link to="/login" className='/login'>返回登录</Link>
                 <small className='error-message'>{formData['errorMessage']}</small>
-                <small className='success-message'>{formData['successMessage']}</small>
+                <small className='success-message'>{Boolean(formData['errorMessage']) || formData['successMessage']}</small>
             </form>
         </div>
     )

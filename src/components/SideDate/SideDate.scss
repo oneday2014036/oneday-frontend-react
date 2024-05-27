@@ -1,45 +1,62 @@
-@import "../../styles/root";
-
 div.side-date {
   position: absolute;
-  top: .1em;
+
   left: .3em;
+  top: -.5em;
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   z-index: 99;
-  font-family: Gelasio;
+  font-family: $font-num-sideDate;
+  color: $deep-yellow;
 
   span {
     display: block;
-    font-size: 2em;
+    font-size: 1.2em;
+    @media screen and (min-width: $m-screen){
+      font-size: 1.5em;
+    }
     letter-spacing: .2em;
-    color: $deep-yellow;
   }
 
   span.year {
-    font-size: 2.4em;
+    font-size: 1.6em;
+    @media screen and (min-width: $m-screen){
+      font-size: 2.4em;
+    }
     line-height: 1;
-    letter-spacing: .4em;
+    //text-align: right;
+    //letter-spacing: .4em;
   }
 }
 
 div.article-card {
   .side-date {
+    color: $young-yellow;
+
     position: absolute;
     font-size: 1em;
-    top: -1.6em;
+    top: -1.5em;
     left: -.3em;
 
     @media  screen and (min-width: $m-screen) {
       font-size: 1.3em;
       left: -1em;
+    }
+  }
+
+  span.year {
+    //font-size: 1em;
+  }
+
+  span.month-day {
+    font-size:  1.2em;
+    line-height: 1.3;
+    padding-right: .2em;
+    @media  screen and (min-width: $m-screen) {
+      padding-right: .3em;
 
     }
   }
 
-  .side-date .month-day {
-    font-size:  1.3em;
-    line-height: 1.5;
-  }
 }

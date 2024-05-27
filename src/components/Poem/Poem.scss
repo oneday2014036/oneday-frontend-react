@@ -2,44 +2,98 @@
 
 main {
   //border: 1px solid purple;
+  //background-color: $bg-white;
+  @media screen and (min-width: $m-screen){
+    min-height: 20em;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    article.poem {
+      flex: 1;
+    }
+  }
   position: relative;
   flex-grow: 1;
-  height: 90%;
   padding-top: 1em;
   backdrop-filter: blur(1px);
 
-  article.poem {
-
-    background-color: $bg-white;
+  article.poem, div.title {
     width: 90%;
+    margin: 1em auto;
+
+  }
+
+  article.poem {
+    //background-color: $bg-white;
+    height: 100%;
+
     margin: 0 auto;
-    padding: 2em 5em;
+    padding: 2em;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    height: 100%;
     white-space: pre-line;
 
     font-size: 1.1rem;
-    font-family: $font-zh-songkeben;
+    font-family: $font-zh-poem;
     line-height: 1.7;
+    border: 1px solid $form-black;
+
+    .content {
+      height: 100%;
+
+      p {
+        display: block;
+      }
+    }
+
 
     .read-more {
-      display: block;
-      padding-bottom: .4em;
-      margin-top: .8em;
       font-size: .8em;
-      border-bottom: 2px solid $young-yellow;
       color: $soft-black;
-      text-align: right;
+      text-align: center;
+      width: 11ch;
+      padding: .3em;
+
+      border-radius: .3em;
+      border: 1px solid $form-black;
+
+      position: absolute;
+      right: 2.5em;
+      bottom: 0;
+      @media screen and (max-width: $m-screen - 300px){
+        left: 5%;
+        bottom: -4em;
+
+      }
+      @media screen and (min-width: $m-screen + 160px){
+        right: 5%;
+        bottom: 2.8em;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
     }
 
-    .title {
-      font-size: 1.5em;
-      margin-top: 1em;
+
+  }
+
+  .title {
+    font-size: 1.5em;
+    color: #fff;
+    //font-family: $font-en-title, $font-zh-title;
+
+    &::before {
+      content: "";
+      border: 2px solid $young-yellow;
+      display: inline;
     }
 
-    .read-more > p:hover, .title:hover {
-      cursor: pointer;
+    p {
+      display: inline-block;
+      width: 90%;
+      margin-left: .5em;
     }
   }
 
@@ -51,26 +105,36 @@ main {
 
     }
 
+    .title {
+      font-size: 1.2em;
+    }
+
     article.poem {
       column-count: 2;
       padding: 2em 3em;
       line-height: 2;
 
-
-
-      .title {
-        font-size: 1.2em;
-      }
-
       .read-more {
         margin-top: 2em;
+
+        p {
+          right: -1em;
+        }
       }
     }
   }
 
   @media screen and (min-width: 880px) {
-      article.poem > .title {
-        font-size: 1.5em;
+      margin-top: 2em;
+      .title {
+        font-size: 2em;
+        color: black;
+      }
+
+      .read-more {
+        p {
+          right: -2em;
+        }
       }
   }
 }

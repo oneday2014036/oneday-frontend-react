@@ -7,11 +7,17 @@ div.not-found {
   gap: 1em;
   align-items: center;
 
-  img {
+  .logo {
     margin-top: 15%;
-    width: 200px;
-    animation: logo-spin 8s linear infinite;
     user-select: none;
+
+    width: 100px;
+    @media screen and (min-width: $m-screen){
+      width: 200px;
+
+    }
+    animation: logo-spin 8s linear infinite;
+
 
     &:hover {
       cursor: pointer;
@@ -34,10 +40,17 @@ div.not-found {
 
 
   div.not-found-content  {
+    display: block;
+    line-height: 1;
+    text-align: center;
+    user-select: none;
 
     & > p {
       font-family: monospace;
-      font-size: 4em;
+      font-size: 2em;
+      @media screen and (min-width: $m-screen) {
+        font-size: 4em;
+      }
       display: block;
       line-height: 1;
       text-align: center;
@@ -51,9 +64,13 @@ div.not-found {
       display: flex;
       flex-direction: column;
       gap: .8em;
+      align-items: flex-start;
 
       h1 {
-        font-size: 1.8em;
+        font-size: 1.3em;
+        @media (min-width: $m-screen) {
+          font-size: 1.8em;
+        }
         margin-bottom: .5em;
       }
 
@@ -63,17 +80,23 @@ div.not-found {
 
         p {
           //border: 1px solid purple;
+          color: white;
           background-color: green;
           padding: .5em;
           border-radius: 5px;
           display: block;
           font-weight: normal;
+          letter-spacing: .1em;
         }
       }
 
       .music {
         width: 100%;
-        //border: 1px solid black;
+        margin-top: 4em;
+        display: none;
+        @media screen and (min-width: $m-screen) {
+          display: block;
+        }
 
         p {
           font-size: 1em;

@@ -1,14 +1,50 @@
+div.editor-page {
+  height: 100%;
+  width: 100%;
+  background-color: #B0E092;
+  display: flex;
+
+  & > div:first-child {
+    border-right: 1px solid #1c1c1c;
+    background-color: #81f494;
+    opacity: .7;
+  }
+
+  div {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 1.3em;
+      @media screen and (min-width: $m-screen){
+        font-size: 1.8em;
+
+      }
+      display: block;
+    }
+  }
+}
+
+
+
 div.poem-editor {
   background: #CBF291;
   min-width: 290px;
-  height: 100%;
-
+  min-height: 100%;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Dancing Script", sans-serif;
-
+  font-family: $font-en-title-script, sans-serif;
   padding-top: 4em;
+  padding-bottom: 1.5em;
 
   div.header {
     display: flex;
@@ -17,7 +53,7 @@ div.poem-editor {
     margin-bottom: 2em;
 
     h1 {
-      font-size: 1.5em;
+      font-size: 1.8em;
       color: #20290E;
     }
   }
@@ -27,7 +63,7 @@ div.poem-editor {
     flex-direction: column;
     align-items: center;
     gap: 1.8em;
-    width: 86%;
+    min-width: 86%;
 
     label {
       width: 100%;
@@ -58,12 +94,14 @@ div.poem-editor {
     }
 
     textarea {
+      //border: 1px solid hotpink;
       font-size: 1.2em;
       padding: .8em 1em;
       min-height: 28em;
       width: 100%;
       line-height: 1.4em;
       resize: none;
+      overflow: hidden;
     }
 
     textarea:active, textarea:focus, input:focus{
@@ -72,13 +110,14 @@ div.poem-editor {
 
 
     button {
-      /*background: orange;*/
       background: #EBA809;
       border: none;
-      box-shadow: 0 1px 2px rgb(23, 22, 22);
+      border-radius: 8px;
+      //box-shadow: 0 1px 2px rgb(23, 22, 22);
       display: block;
       width: 100%;
       padding: .7em .4em;
+      //margin: 0 0 1.5em;
       font-size: 1.4em;
       font-family: QuickSand, sans-serif;
       font-weight: bold;
@@ -94,4 +133,96 @@ div.poem-editor {
 
   }
 
+}
+
+/* upload editor */
+div.upload-editor {
+  border: 1px solid #C4C4C4;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 4em 2em;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, .2);
+  mix-blend-mode: luminosity;
+
+  .logo {
+    width: 13em;
+    margin-bottom: 1em;
+  }
+
+  form {
+    width: 50%;
+
+    .upload-zone {
+      border: 2px dashed #aaa;
+
+      label {
+        display: block;
+        padding: 5em 1em;
+        text-align: center;
+      }
+    }
+
+    input[type="file"] {
+      display: none;
+      background-color: transparent;
+      color: transparent;
+    }
+
+    input {
+      width: 100%;
+      padding: .5em;
+      border: 1px solid $form-black;
+      border-radius: 5px;
+      display: block;
+      margin-top: .5em;
+      background-color: transparent;
+
+      &:active, &:focus {
+        outline: none;
+      }
+
+      &:valid {
+        border: 1px solid green;
+      }
+
+      &:invalid {
+        border: 1px solid tomato;
+      }
+
+      &:placeholder-shown::placeholder {
+        color: #1c1c1d;
+      }
+    }
+
+    label {
+      display: block;
+      padding: .5em 0;
+      margin-bottom: .5em;
+
+      &:hover {
+        color: #67AAEA;
+        cursor: pointer;
+        outline: none;
+      }
+
+
+    }
+  }
+
+  button {
+    padding: .5em .8em;
+    margin-top: .8em;
+
+    background-color: $young-yellow;
+    border: none;
+    border-radius: 5px;
+    width: 10%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

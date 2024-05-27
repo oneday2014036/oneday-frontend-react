@@ -1,0 +1,15 @@
+div.dashboard-page {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+
+  padding: 2em;
+  min-width: 100%;
+  //border: 1px solid black;
+  //background-color: white;
+
+  @media screen and (min-width: $m-screen + 120px){
+    margin-left: 30em;
+  }
+
+}

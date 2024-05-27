@@ -37,7 +37,9 @@ export default function Card({articleData}) {
                         {articleData.tags.map(i => Object.values(i)[0]).join(';')}
                     </div>
                 </div>
-                <p>{articleData.intro}</p>
+                <div className='intro'>
+                    <p>{articleData.intro}</p>
+                </div>
             </div>
         </div>
     )

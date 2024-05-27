@@ -1,0 +1,17 @@
+div.dashboard-card {
+  border: 1px solid #1c1c1c;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 100%;
+  transition: background-color, 1s;
+
+  a {
+    display: block;
+    height: 100%;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #B0E092;
+  }
+}

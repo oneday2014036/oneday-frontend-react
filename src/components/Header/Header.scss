@@ -1,9 +1,4 @@
-//@import "../../styles/root";
-
-
 header {
-  //border: 1px solid black;
-
   padding: 0;
   display: flex;
   flex-direction: row;
@@ -22,7 +17,7 @@ header {
 
   }
 
-  a.logo img {
+  .logo > img {
     //border: 1px solid green;
     min-width: 200px;
     width: 17%;
@@ -31,11 +26,13 @@ header {
   img.hand-down-nav {
     width: 2em;
     margin-left: 1em;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .function-area {
     display: none;
-
 
   }
 
@@ -49,8 +46,6 @@ header {
       display: none;
     }
 
-
-
     .function-area {
       //border: 1px solid greenyellow;
       display: flex;
@@ -60,6 +55,9 @@ header {
       margin-left: 2em;
       margin-right: 1em;
 
+      .avatar {
+        width: 36px;
+      }
 
     }
 
@@ -67,6 +65,10 @@ header {
       transform: translateX(1em);
       margin: 0 2em 0 1em;
     }
+  }
+
+  .reveal {
+    display: none;
   }
 
 }
@@ -80,22 +82,21 @@ header {
     transition: backdrop-filter 2s ease-in-out;
 
 
-
     header {
+      position: fixed;
       grid-column: 1 / 4;
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 100vh;
-      //max-width: 300px;
+      //height: 100vh;
       gap: 1em;
 
       & > .avatar {
         display: block !important;
         order: 0;
+        width: 100px;
         margin-top: 4em;
       }
-
 
 
       .welcome {
@@ -142,3 +143,47 @@ header {
 }
 
 
+.side-header {
+  //background-color: #81f494;
+  background-color: #fff;
+  opacity: .9;
+  position: absolute;
+  z-index: 99;
+  height: 20em;
+  width: 100vw;
+  padding: 1.5em;
+
+  animation: drop-down 1s forwards;
+
+  display: flex;
+  flex-direction: column;
+
+
+  // Note: Go to Navbar.scss to edit navbar style
+
+  .function-area {
+    margin-top: 1.5em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .5em;
+    width: 2em;
+    height: 4em;
+
+    .avatar {
+      width: 2.4em;
+    }
+  }
+}
+
+@keyframes drop-down {
+  from {
+    top: -10em;
+  }
+
+  to {
+    top: 0;
+  }
+
+}

@@ -1,0 +1,29 @@
+div.article-list {
+  overflow-y: scroll;
+  & > div.article-card:nth-child(even) > .thumbnail {
+    order: 2;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  & > div.article-card:nth-child(odd) > .thumbnail {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  & > div.article-card:nth-child(even) > div.side-date {
+    right: -.3em;
+    left: auto;
+    justify-content: flex-end;
+
+    span {
+      text-align: right;
+    }
+
+    @media  screen and (min-width: $m-screen) {
+      right: -1.1em;
+
+    }
+
+  }
+}

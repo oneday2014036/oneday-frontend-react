@@ -1,4 +1,3 @@
-import Avatar from "react-avatar";
 import Markdown from "react-markdown";
 import remarkRehype from 'remark-rehype';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -6,6 +5,7 @@ import remarkSlug from 'remark-slug';
 
 
 import StatusReminder from "../StatusReminder/StatusReminder.jsx";
+import Avatar from "../Avatar/Avatar.jsx";
 
 import './Article.scss'
 
@@ -18,7 +18,7 @@ export default function Article({article}) {
             <div className='info'>
                 <div className='author'>
                     {/*<img src='./assets/images/avatar.png' alt='author avatar'/>*/}
-                    <Avatar className='avatar' alt='avatar' size={30}/>
+                    <Avatar src={article.author.avatar} size={30}/>
                     <p>{article.author.name}</p>
                 </div>
                 <div className='post-date'>发表于{article.date.past}天前</div>
@@ -27,7 +27,9 @@ export default function Article({article}) {
                 </span>
                 </div>}
             </div>
-            {article.date.past >= 0 && <StatusReminder status='OUTDATED'/>}
+
+            {article.date.past >= 20 && <StatusReminder status='OUTDATED'/>}
+
             <div className='main-content'>
                 <Markdown remarkPlugins={[remarkSlug, remarkRehype]}
                           rehypePlugins={[rehypeAutolinkHeadings]}

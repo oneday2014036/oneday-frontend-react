@@ -13,10 +13,18 @@ $deep-yellow: #CE8C51;
 $young-yellow: gold;
 
 // font-families
-$font-zh-songkeben: FZSongKeBenXiuKaiS-R-JF;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+$font-zh-poem: FZSongKeBenXiuKaiS-R-JF;
+//$font-zh-newshusong: FZNewShuSong-Z10S;
+$font-zh-title: FZJunHeiS-DB-GB;
+$font-en-title: Homenaje;
+$font-num-sideDate: Gelasio;
+$font-en-title-script: "Dancing Script", cursive;
 
 
 @mixin login-form($form-height) {
+  font-family: system-ui;
   width: 85%;
   height: $form-height;
   margin: 6em auto;
@@ -24,6 +32,8 @@ $font-zh-songkeben: FZSongKeBenXiuKaiS-R-JF;
   display: flex;
   flex-direction: column;
   align-items: center;
+  //border: 1px solid green;
+
 
   @media screen and (min-width: $m-screen){
     width: 42%;
@@ -38,7 +48,7 @@ $font-zh-songkeben: FZSongKeBenXiuKaiS-R-JF;
     }
 
     @media screen and (min-width: $m-screen) {
-      width: 40%;
+      width: 30%;
     }
   }
 
