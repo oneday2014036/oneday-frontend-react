@@ -24,9 +24,6 @@ function UploadEditor() {
 
     function handleChange(e) {
         const {name, value, type, files} = e.target;
-        // console.log('target', e.target)
-        // console.log('target file', e.target.files)
-        // console.log('file', fileData.file)
         if (type === 'file') {
             setFileData(pre => {
                 return {
@@ -193,7 +190,6 @@ function OnlineEditor() {
 
 
 export default function EditorPage() {
-    const pageState = useSelector(state => state.page);
     const [isEditOnline, setIsEditOnline] = useState(null)
     if (typeof isEditOnline === 'boolean') {
         console.log('changed', isEditOnline)

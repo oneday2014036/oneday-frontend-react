@@ -87,19 +87,19 @@ export default function LoginPage() {
                             'successMessage': 'Sign up successfully!',
                         }
                     })
-                dispatch(setAuthStatus(true))
-                dispatch(setUserInfo(res.data))
+                    dispatch(setAuthStatus(true))
+                    dispatch(setUserInfo(res.data))
                 })
                 .catch(err => {
                 console.log(err.response)
-                setErrorMessage(err.response.data)
+                setErrorMessage(err.response.data.error)
             })
         }
     }
 
     return (
         <div className="signup">
-            <Logo />
+            <Logo isWithTitle={true}/>
             <form className={formData.clickSubmit ? 'invalid' : ''} method="post">
                 <label>
                     <input type='text'
@@ -150,7 +150,7 @@ export default function LoginPage() {
                 <button type='submit' onClick={handleSubmit}>注册</button>
                 <Link to="/login" className='/login'>返回登录</Link>
                 <small className='error-message'>{formData['errorMessage']}</small>
-                <small className='success-message'>{Boolean(formData['errorMessage']) || formData['successMessage']}</small>
+                <small className='success-message'>{!formData['errorMessage'] && formData['successMessage']}</small>
             </form>
         </div>
     )

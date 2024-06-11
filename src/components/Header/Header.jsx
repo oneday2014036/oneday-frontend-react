@@ -40,8 +40,7 @@ export default function Header({layout}) {
     const ref = useRef()
 
     useEffect(() => {
-        const handleClick = (e) => {
-            console.log('click me')
+        const handleClick = () => {
             setSideHeaderFoldState(true)
         }
             window.addEventListener('click', handleClick)

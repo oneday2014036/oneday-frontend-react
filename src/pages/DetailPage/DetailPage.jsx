@@ -10,7 +10,6 @@ export default function DetailPage() {
     const {id: articleID} = useParams()
     const [article, isLoading] = useFetch(`/api/articles/${articleID}?type=detail`)
 
-    console.log(isLoading)
     if (isLoading) {
         return <div>Loading...</div>
     }
